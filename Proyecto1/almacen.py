@@ -1,23 +1,27 @@
 from .filtro import revisa
+from .request import doRequest
 
 class almacen:
 
-    Dciudades = {}
+    Ciudades = {}
 
     def vacio():
-        if Dciudades == {}:
+        if Ciudades == {}:
             return True
         else: 
             return False
     
     def revisor(self, lugar):
-        if vacio() == True:
-            
-        elif lugar in Dciudades:
-            return lugar + """: su temperatura maxima es {}, 
-            su temperatura minima es {} 
-            y su humedad es{}""".format(Dciudades[lugar][0], Dciduades[lugar][1], Dciudades[lugar][2])
+        if lugar in Ciudades:
+            continue
         else:
+            iata = revisa(self, lugar)
+            datos = doRequest(iata)
+            auxiliar = datos.split(", ")
+            Ciudades[auxiliar[0]] = auxiliar[1:3]
+    return lugar + """: su temperatura maxima es {}, 
+    su temperatura minima es {} 
+    y su humedad es {}""".format(Ciudades[lugar][0], Ciduades[lugar][1], Ciudades[lugar][2])
             
 
 
