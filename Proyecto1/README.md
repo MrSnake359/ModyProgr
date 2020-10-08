@@ -3,15 +3,15 @@
 Proyecto que hace predicciones de clima para 
 los aereopuertos y sus usuarios.
 
-# DataSet1.csv.
+# DataSet1.csv
 
 Datos de los vuelos nacionales que se van que analizar.
 
-# DataSet2.csv.
+# DataSet2.csv
 
 Datos de los vuelos internacionales que se van a analizar.
 
-# Filtro.
+# Filtro
 
 Convierte los nombres de ciudades a IATA para facilitar la revision de clima.
 
