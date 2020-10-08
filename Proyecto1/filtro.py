@@ -3259,12 +3259,6 @@ class filtro:
         'Tallinn': 'TLL',
         }
 
-    def lector(self, archivo):
-        with open(archivo, 'r') as cvsfile:
-            reader = csv.reader(archivo)
-            for row in reader:
-                revisa(self, row[0])
-
     def revisa(self, nombre):
         if nombre in DIatas:
             return Diatas[nombre]
