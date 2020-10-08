@@ -22,11 +22,5 @@ def doRequest(iata):
     cadena  += " ,{}°C, ".format(dictionary.get("main",{}).get("temp_min"))
     cadena  += "{}°C, ".format(dictionary.get("main",{}).get("temp_max"))
     cadena  += "{}%".format(dictionary.get("main",{}).get("humidity"))
-    
-
-
-    # in the JSON dictionary['weather'] is a list, with a string, down is splitted
-    #weather += str(dictionary.get('weather')).split("main")[1].split("\'")[2] 
-    #weather += " and a temperature of {}°C".format(dictionary.get("main",{}).get("temp")) 
     return cadena
     
