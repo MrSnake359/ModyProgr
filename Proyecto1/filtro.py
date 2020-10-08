@@ -2,7 +2,7 @@ import csv
 
 class filtro:
 
-    DIatas = {
+    LugaresAceptados = {
         'UgiiLake': 'AVK1',
         'Taschereau': 'XFO',
         'Sofia': 'SOF',
@@ -3260,7 +3260,7 @@ class filtro:
         }
 
     def revisa(self, nombre):
-        if nombre in DIatas:
-            return Diatas[nombre]
+        if nombre in LugaresAceptados:
+            return LugaresAceptados[nombre]
         else:
-            return "Error de busqueda: Ciudad no encontrada"
+            return nombre
