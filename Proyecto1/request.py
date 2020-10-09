@@ -13,7 +13,7 @@ def doRequest(iata):
         sys.exit("Ocurrió un error al comunicarse con el servidor")
 
     if(dictionary.get("cod") == "404"):
-        return "Ciudad inválida"
+        return ", Ciudad inválida"
 
     clima=  str(dictionary.get("weather"))  
 

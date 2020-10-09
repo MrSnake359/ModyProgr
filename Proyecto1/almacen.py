@@ -1,21 +1,26 @@
-from filtro import revisa
+from filtro import *
 from request import doRequest
 
 class almacen:
+ 
+    filtro = filtro()    
 
-    Ciudades = {}
-    
     def revisor(self, lugar):
-        if not lugar in Ciudades:
-            iata = revisa(self, lugar)
+        ciudades = {}  
+        if not lugar in ciudades:
+            iata = filtro.revisa(self, lugar)
             datos = doRequest(iata)
             auxiliar = datos.split(", ")
-            Ciudades[auxiliar[0]] = auxiliar[1:3]
-
-        return lugar + """: su temperatura maxima es {}, 
-        su temperatura minima es {} 
-        y su humedad es {}""".format(Ciudades[lugar][0], Ciduades[lugar][1], Ciudades[lugar][2])
-            
+            print(auxiliar)
+            ciudades[lugar] = auxiliar[1:3]
+            print(ciudades)
+            if ciudades[lugar] == 'Ciudad inválida':
+                return ciudades[lugar]
+            else:
+                return lugar + """: su clima es {}, 
+                su temperatura minima es {}, su temperatura maxima es {}
+                y su humedad es {}""".format(ciudades[lugar][0], ciudades[lugar][1], ciudades[lugar][2], ciudades[lugar][3])
+   
 
 
         
