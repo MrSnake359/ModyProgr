@@ -2,26 +2,41 @@ from filtro import *
 from request import doRequest
 
 class almacen:
+    """Clase usada para almacenar los datos ya buscados en la API
+    en un diccionario para su facil acceso.
+    
+    Variables globales: 
+        filtro: variable usada como objeto de tipo filtro
+                para usar los metodos de la clase filtro
+    
+    Metodos:
+        revisor(self, lugar)
+            busca la ciudad en el diccionario y devuelve los datos de clima.
+     """
  
     filtro = filtro()    
 
     def revisor(self, lugar):
+        """Parametros:
+        recibe un string de la ciudad a buscar.
+        
+        Variables:
+            ciudades: diccionario usado para almacenar las ciudades buscadas 
+                    previamente en la API.
+        Regresa:
+            Cadena con los datos de clima, temperatura minima y maxima
+            y su % de humedad
+        """
         ciudades = {}  
-        if not lugar in ciudades:
+        if lugar in ciudades:
+            print(ciudades)
+            return ciudades[lugar]
+        else:
             iata = filtro.revisa(self, lugar)
             datos = doRequest(iata)
-            auxiliar = datos.split(", ")
-            print(auxiliar)
-            ciudades[lugar] = auxiliar[1:3]
+            ciudades[lugar] = datos
             print(ciudades)
-            if ciudades[lugar] == 'Ciudad inválida':
-                return ciudades[lugar]
-            else:
-                return lugar + """: su clima es {}, 
-                su temperatura minima es {}, su temperatura maxima es {}
-                y su humedad es {}""".format(ciudades[lugar][0], ciudades[lugar][1], ciudades[lugar][2], ciudades[lugar][3])
-   
-
+            return ciudades[lugar]
 
         
     

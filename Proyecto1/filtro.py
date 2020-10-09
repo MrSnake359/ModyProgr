@@ -1,8 +1,25 @@
 import csv
 
 class filtro:
+    """Clase que revisa si la ciudad requerida contiene
+    codigo IATA.
+    
+    Metodos:
+        revisa(self, nombre)
+            busca en un diccionario el nombre de la ciudad
+            y devuelve su codigo IATA.
+    """
 
     def revisa(self, nombre):
+        """Parametros:
+            recibe un string con el nombre de la ciudad
+        Variables:
+            LugaresAceptados: diccionario con los codigos IATA 
+                            de diversas ciudades
+        Regresa:
+            Un codigo IATA, de ser encontrado en el diccionario,
+            o el mismo valorque fue analizado
+        """
         LugaresAceptados = {
             'UgiiLake': 'AVK1',
             'Taschereau': 'XFO',
