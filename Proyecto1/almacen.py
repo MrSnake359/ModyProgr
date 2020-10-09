@@ -5,13 +5,7 @@ class almacen:
 
     Ciudades = {}
 
-    def vacio():
-        if Ciudades == {}:
-            return True
-        else: 
-            return False
-    
-    def revisor(self, lugar):
+    def almacenamiento(self, lugar):
         if lugar in Ciudades:
             continue
         else:
