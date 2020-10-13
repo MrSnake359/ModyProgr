@@ -14,17 +14,20 @@ from almacen import *
 almacen = almacen()
 
 def lee(file_name):
-	with open (file_name, 'r') as csvFile:
-		csv_reader = csv.reader(csvFile)
-		row_line = 0
-		for row in csv_reader:
-			if row_line == 0:
-				row_line += 1
-				continue
-			if not(esInt(row[0])):
-				print(almacen.revisor(row[0]))
-			if not(esInt(row[1])):
-				print(almacen.revisor(row[1]))
+	if (file_name == None):
+		print("Archivo no encontrado")
+	else:
+		with open (file_name, 'r') as csvFile:
+			csv_reader = csv.reader(csvFile)
+			row_line = 0
+			for row in csv_reader:
+				if row_line == 0:
+					row_line += 1
+					continue
+				if not(esInt(row[0])):
+					print(almacen.revisor(row[0]))
+				if not(esInt(row[1])):
+					print(almacen.revisor(row[1]))
 
 def esInt(palabra):
 
