@@ -1,0 +1,1 @@
+Hola. Soy el archivo a cifrar. Soy importante y secreto.Solo me puedes descifrar si cuentas con al menos t de las n evaluacionesentregadas al cifrarme.
